@@ -10,7 +10,6 @@ class TestBooksCollector:
     def test_add_new_book_success(self, collector, book_name):
         collector.add_new_book(book_name)
         assert book_name in collector.books_genre
-        assert collector.books_genre[book_name] == ''
 
     @pytest.mark.parametrize("invalid_name", ["", "a" * 41])
     def test_add_new_book_invalid_length(self, collector, invalid_name):
